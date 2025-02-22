@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт - HellBANK</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #ff0000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .balance {
+            font-size: 22px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            background-color: #222;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu-item {
+            padding: 15px 30px;
+            background-color: #333;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin: 10px;
+            flex: 1 1 20%; /* Добавляет адаптивность */
+            min-width: 150px;
+        }
+
+        .menu-item:hover {
+            background-color: #ff0000;
+        }
+
+        .tab-content {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px; /* Ограничение ширины */
+            box-sizing: border-box;
+        }
+
+        .tab-content h2 {
+            color: #ff0000;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .tab-content p {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .news-section {
+            margin-top: 40px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .news-section h2 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .news-section p {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+            flex: 1 1 20%;
+            min-width: 100px;
+        }
+
+        .tab:hover {
+            background-color: #ff0000;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                flex: 1 1 45%; /* Уменьшаем количество элементов на строке */
+            }
+
+            .tab-content h2 {
+                font-size: 22px;
+            }
+
+            .news-section h2 {
+                font-size: 20px;
+            }
+
+            .tabs {
+                flex-direction: column; /* Ставим кнопки вкладок вертикально */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-item {
+                flex: 1 1 100%; /* Каждый элемент будет на новой строке */
+            }
+
+            .tab-content h2 {
+                font-size: 20px;
+            }
+
+            .news-section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Добро пожаловать в ваш аккаунт
+        <div class="balance">Ваш баланс: 1000 SOUL</div>
+    </div>
+
+    <!-- Меню с вкладками -->
+    <div class="menu">
+        <div class="menu-item" onclick="showTab('transfer')">Передача денег</div>
+        <div class="menu-item">СКОРО</div>
+        <div class="menu-item">СКОРО</div>
+        <div class="menu-item">СКОРО</div>
+    </div>
+
+    <!-- Содержимое вкладки "Передача денег" -->
+    <div id="transfer" class="tab-content">
+        <h2>Передача денег</h2>
+        <p>Здесь будет возможность передавать деньги другим пользователям. Функция скоро будет доступна.</p>
+    </div>
+
+    <!-- Секция новостей и обновлений -->
+    <div class="news-section">
+        <h2>Новости и обновления</h2>
+        <p>СКОРО!</p>
+    </div>
+
+    <script>
+        // Функция для отображения вкладок
+        function showTab(tabName) {
+            // Скрыть все вкладки
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => tab.style.display = 'none');
+
+            // Показать выбранную вкладку
+            const activeTab = document.getElementById(tabName);
+            activeTab.style.display = 'block';
+        }
+
+        // Изначально показываем вкладку "Передача денег"
+        showTab('transfer');
+    </script>
+
+</body>
+</html>
